@@ -25,7 +25,7 @@ app.use('/tutor',require('./Routes/Tutor_routes'))
 const path = require("path");
 
 //connect database
-mongoose.connect(process.env.DB_URL)
+mongoose.connect("mongodb+srv://Uni_project:TJLKZMzeQ0jt6iZO@tutor.cmpntyv.mongodb.net/?retryWrites=true&w=majority&appName=Tutor")
   .then(async () => {
     console.log("Database connected successfully");
     // Call function to insert default admin data
@@ -39,5 +39,5 @@ app.get("/", (req, res) => {
   });
   
 //create PORT
-const PORT=process.env.PORT;
+const PORT=5000;
 app.listen(PORT, () => console.log("Server running on port " + PORT));
